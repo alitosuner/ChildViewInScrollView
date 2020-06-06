@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LWv-fk-lS2">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="RoX-Pg-sHo">
+            <objects>
+                <viewController id="LWv-fk-lS2" customClass="ViewController" customModule="ChildViewInScrollView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wAE-PY-WKw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VuE-zw-ksp">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OBP-kO-fSv">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pgz-OR-u4q">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="128" id="TwN-Gh-MWg"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="OBP-kO-fSv" secondAttribute="bottom" id="25F-G4-mHd"/>
+                                    <constraint firstItem="OBP-kO-fSv" firstAttribute="width" secondItem="VuE-zw-ksp" secondAttribute="width" id="NGG-Dl-g4u"/>
+                                    <constraint firstItem="OBP-kO-fSv" firstAttribute="leading" secondItem="VuE-zw-ksp" secondAttribute="leading" id="Pqq-zj-pXo"/>
+                                    <constraint firstItem="OBP-kO-fSv" firstAttribute="top" secondItem="VuE-zw-ksp" secondAttribute="top" id="ZPv-U8-Q7i"/>
+                                    <constraint firstAttribute="trailing" secondItem="OBP-kO-fSv" secondAttribute="trailing" id="e32-hZ-K8f"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="epq-0X-Jtp"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="0qq-Jm-UHL"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="VuE-zw-ksp" firstAttribute="top" secondItem="FJJ-wU-acH" secondAttribute="top" id="Fmt-su-8BJ"/>
+                            <constraint firstItem="VuE-zw-ksp" firstAttribute="bottom" secondItem="FJJ-wU-acH" secondAttribute="bottom" id="IK5-Yd-BfF"/>
+                            <constraint firstItem="VuE-zw-ksp" firstAttribute="trailing" secondItem="FJJ-wU-acH" secondAttribute="trailing" id="Nhj-lp-T1u"/>
+                            <constraint firstItem="VuE-zw-ksp" firstAttribute="leading" secondItem="FJJ-wU-acH" secondAttribute="leading" id="hmP-rA-ksR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FJJ-wU-acH"/>
+                    </view>
+                    <connections>
+                        <outlet property="customView" destination="Pgz-OR-u4q" id="1yh-Hs-TUP"/>
+                        <outlet property="customViewHeightConstraint" destination="TwN-Gh-MWg" id="JEx-RP-sms"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wfz-Yv-SZx" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+        <!--Child View Controller-->
+        <scene sceneID="6fX-gf-bic">
+            <objects>
+                <viewController storyboardIdentifier="ChildViewController" id="APx-bH-dK7" customClass="ChildViewController" customModule="ChildViewInScrollView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7RU-ec-OJx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RMg-gk-CUK">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="tFx-VR-uTd">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tFx-VR-uTd" id="jYI-Q1-CLr">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="mYB-Aq-elT" firstAttribute="bottom" secondItem="RMg-gk-CUK" secondAttribute="bottom" id="9Cl-hh-eFc"/>
+                            <constraint firstItem="mYB-Aq-elT" firstAttribute="trailing" secondItem="RMg-gk-CUK" secondAttribute="trailing" id="Nle-eo-Alc"/>
+                            <constraint firstItem="RMg-gk-CUK" firstAttribute="top" secondItem="mYB-Aq-elT" secondAttribute="top" id="ewj-eU-2rE"/>
+                            <constraint firstItem="RMg-gk-CUK" firstAttribute="leading" secondItem="mYB-Aq-elT" secondAttribute="leading" id="iLu-vK-x9z"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mYB-Aq-elT"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="RMg-gk-CUK" id="I0d-ec-jxL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1g6-w8-NiH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="801" y="138"/>
+        </scene>
+    </scenes>
+</document>
