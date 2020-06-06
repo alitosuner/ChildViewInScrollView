@@ -39,6 +39,7 @@ final class ViewController: UIViewController {
     }
     
     private func activateRequiredConstraints(for childView: UIView) {
+        childView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             childView.leadingAnchor.constraint(equalTo: customView.leadingAnchor, constant: 0),
             childView.trailingAnchor.constraint(equalTo: customView.trailingAnchor, constant: 0),
